@@ -71,7 +71,7 @@ Object.keys(computer).forEach((key) => {
       // normally, we would add 'b' to 'acc', to arrive at a cumulative value for 'acc', but in our case, we are skipping that step, and instead returning the Object.values of 'acc' (Array[0], because we didn't supply an initial value), concatenated with a ', ' and the object.values of 'b', which is our current value, or Array[1]
       return Object.values(acc).join(':') + ', ' + Object.values(b).join(':');
     });
-    console.log(`${key}: ${arr}`);
+    console.log(`${key} ${arr}`);
   } else {
     console.log(`${key}: ${computer[key]}`);
   }
@@ -127,16 +127,17 @@ Object.keys(computer).forEach((key) => {
         // this is equivalent to Array.flat(1), meaning flattened to the depth of one
 
         // nestedProp represents the key value pairs inside of ports
-        Object.values(nestedProp).join(':')
+       Object.values(nestedProp).join(':')
       // console.log( 'nestedProp: ', nestedProp) < -- you can't actually run this console log, without breaking the function, but this is the output, if you were to do so:
       // nestedProp:  { type: 'usbc', connected: false }
       // nestedProp:  { type: 'usb3', connected: true }
 
-      // the 'map' part of flatMap() is iterating over both nestedProps, and returning an array. This array has two elements, which are the Object.values of nestedProp.  Array[0] = 'usbc:false', while Array[1] = usb3:true.  Because of this structure, we don't need to add our own comma 
+      // the 'map' part of flatMap() is iterating over both nestedProps, and returning an array. This array has two elements, which are the Object.values of nestedProp:  Array[0] = 'usbc:false', while Array[1] = usb3:true.  Because of this structure, we don't need to add our own comma 
     );
 
-    console.log(`${key}: ${arr}`);
+    console.log(`${key} ${arr} `);
   } else {
     console.log(`${key}: ${computer[key]}`);
   }
 });
+
