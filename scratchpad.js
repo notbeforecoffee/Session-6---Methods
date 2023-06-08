@@ -93,7 +93,7 @@ for (const key in computer) {
         return acc;
       }, [])
       .join(", ");
-    console.log(`${key}: ${arr}`);
+    console.log(`${key} ${arr}`);
   } else {
     console.log(`${key}: ${computer[key]}`);
   }
