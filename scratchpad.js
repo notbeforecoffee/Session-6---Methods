@@ -88,6 +88,7 @@ for (const key in computer) {
         // this is a form of array destructuring, so we are splitting the elements in the array we are creating with Object.values
         // See: https://www.freecodecamp.org/news/array-destructuring-in-es6-30e398f21d10/
         const [property, value] = Object.values(currentValue);
+        // the accumulator value is a psudo array, and we can push to it on each iteration through the array.  This is a way of getting around the normal limitation of .reduce method, that only returns the last value 
         acc.push(`${property}:${value}`);
         return acc;
       }, [])
