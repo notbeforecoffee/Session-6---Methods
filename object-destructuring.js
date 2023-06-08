@@ -1,6 +1,7 @@
 'OBJECT DESTRUCTURING'
 
 const userInfo = {
+  id: 123,
   firstName: 'Janis',
   lastName: 'Zaldin',
   fullName: 'Janis Zaldin',
@@ -13,11 +14,15 @@ const userInfo = {
 
 const { firstName, email, profile } = userInfo;
 
-console.log(firstName);
+
+// A couple of different ways to console.log, to provide a label to the info you log.  
+//This helps you identify where information is coming from if you have several console logs in an application
+
 console.log('firstName: ', firstName);
-console.log(email);
 console.log({ email });
 console.log(`profile: ${profile}`);
+
+
 
 
 //Retrieving nested object values:
@@ -45,11 +50,12 @@ console.log('building: ', building)
 
 
 
-// assigning an alias while destructuring:
+// Assigning an alias while destructuring:
+// aliases help us keep our code human-readable, so that we can keep track of what a variable actually represents
 
-const { password: pswd } = userInfo
+const { id: userId } = userInfo
 
-console.log(pswd)
+console.log({userId}) // 123
 
 
 
@@ -60,4 +66,6 @@ const logEmployee = ({name, occupation}) => {
     console.log(`${name}'s occupation is ${occupation}`)
 }
 
+
+// pass an object to the function above, and our function extracts only the things it needs
 logEmployee(person); // James's occupation is undisclosed
