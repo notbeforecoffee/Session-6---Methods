@@ -85,7 +85,8 @@ for (const key in computer) {
   if (Array.isArray(computer[key])) {
     const arr = computer[key]
       .reduce((acc, currentValue) => {
-        // this is a form of array destructuring, so we are splitting the elements
+        // this is a form of array destructuring, so we are splitting the elements in the array we are creating with Object.values
+        // See: https://www.freecodecamp.org/news/array-destructuring-in-es6-30e398f21d10/
         const [property, value] = Object.values(currentValue);
         acc.push(`${property}:${value}`);
         return acc;
