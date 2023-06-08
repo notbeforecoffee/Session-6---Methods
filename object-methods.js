@@ -12,26 +12,26 @@ const job = {
   },
 };
 
-// Object.create();
+Object.create();
 // used to create a new object from an existing object
     const newJob = Object.create(job)
     newJob.position = 'barista'
     newJob.showDetails() // The barista position is hourly and is open
 
 
-// Object.keys();
+Object.keys();
 // creates an array containing only the keys from a provided object.  
 
-    // const keys = Object.keys(job);
-    // console.log(keys) // [position, type, isAvailable, showDetails]
+    const keys = Object.keys(job);
+    console.log(keys) // [position, type, isAvailable, showDetails]
 
 
-// Object.values();
+Object.values();
 // creates an array containing only the values from a provided object
 
-    // const values = Object.values(job)
-    // console.log(values) // [ 'cashier', 'hourly', true, [Function: showDetails] ]
+    const values = Object.values(job)
+    console.log(values) // [ 'cashier', 'hourly', true, [Function: showDetails] ]
 
-    // console.log(job)
+    console.log(job)
 
 

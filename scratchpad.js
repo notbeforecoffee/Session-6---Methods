@@ -78,6 +78,26 @@ Object.keys(computer).forEach((key) => {
 });
 
 
+//as an alternative method, that would work even if there were more than two objects in the ports array:
+// (and thank you guys for providing this method today, as an alternative!)
+
+for (const key in computer) {
+  if (Array.isArray(computer[key])) {
+    const arr = computer[key]
+      .reduce((acc, currentValue) => {
+        // this is a form of array destructuring, so we are splitting the elements
+        const [property, value] = Object.values(currentValue);
+        acc.push(`${property}:${value}`);
+        return acc;
+      }, [])
+      .join(", ");
+    console.log(`${key}: ${arr}`);
+  } else {
+    console.log(`${key}: ${computer[key]}`);
+  }
+}
+
+
 
 //Using Array.flatMap()
 
